@@ -1,3 +1,6 @@
+## These functions allow an inverse matrix to be cached and retrieved later
+
+## Pass the matrix into the makeCacheMatrix function and assign it
 makeCacheMatrix <- function(x = matrix()){
      inv <- NULL
      set <- function(y){
@@ -10,6 +13,7 @@ makeCacheMatrix <- function(x = matrix()){
      list(set = set, get = get, set.inv = set.inv, get.inv = get.inv)
 }
 
+## Call the cacheSolve function on the object with the result of makeCacheMatrix
 cacheSolve <- function(x){
      inv <- x$get.inv()
      if(!is.null(inv)){
